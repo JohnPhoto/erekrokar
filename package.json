@@ -4,7 +4,7 @@
   "description": "Is it time for cheesedoodles?",
   "main": "index.js",
   "scripts": {
-    "start": "serve dist -p 8080"
+    "start": "serve docs -p 8080"
   },
   "repository": {
     "type": "git",
