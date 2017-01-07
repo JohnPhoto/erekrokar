@@ -46,7 +46,8 @@
       function isTimeForKroks(){
         var now = new Date();
         var hour = now.getHours();
-        return hour >= 20;
+        var dayOfWeek = now.getDay();
+        return hour >= 20 && (dayOfWeek === 5 || dayOfWeek === 6);
       }
 
       function updateAnswer(answer) {
