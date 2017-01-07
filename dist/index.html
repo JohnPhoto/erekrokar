@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kroktajm?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    html, body, .c {
+      height: 100%;
+      width: 100%;
+    }
+    body{
+      display: table;
+    }
+    html, body, h1, h2 {
+      margin: 0;
+    }
+    .c{
+      font-weight: bold;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+    .yes{
+      background-color: orange;
+      color: black;
+    }
+    .no, .maybe{
+      background-color: black;
+      color: orange;
+    }
+    h1{
+      font-size: 12vw;
+    }
+    h2{
+      font-size: 24vw;
+    }
+    </style>
+</head>
+<body class="maybe">
+  <div class="c">
+    <h1 id="q">Kroktajm?</h1>
+    <h2 id="a">Kanske</h2>
+  </div>
+  <script>
+    (function(){
+      function isTimeForKroks(){
+        var now = new Date();
+        var hour = now.getHours();
+        return hour >= 20;
+      }
+
+      function updateAnswer(answer) {
+        var elem = document.getElementById('a');
+        elem.textContent = answer;
+      }
+
+      function updateBodyClass(className){
+        document.body.className = className;
+      }
+
+      function doMagic(){
+        var timeForKroks = isTimeForKroks();
+        if(timeForKroks){
+          updateBodyClass('yes');
+          updateAnswer('Japp!');
+        } else {
+          updateBodyClass('no');
+          updateAnswer('Nepp!');
+        }
+      }
+
+      function init(){
+        doMagic();
+        setInterval(function(){
+          doMagic();
+        }, 1000);
+      }
+
+      init();
+    })();
+  </script>
+</body>
+</html>

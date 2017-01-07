@@ -1,0 +1,22 @@
+{
+  "name": "kroktajm",
+  "version": "1.0.0",
+  "description": "Is it time for cheesedoodles?",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve dist -p 8080"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnPhoto/kroktajm.git"
+  },
+  "author": "JohnPhoto <john@johnphoto.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JohnPhoto/kroktajm/issues"
+  },
+  "homepage": "https://github.com/JohnPhoto/kroktajm#readme",
+  "dependencies": {
+    "serve": "^2.1.2"
+  }
+}
