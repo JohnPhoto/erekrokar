@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/JohnPhoto/kroktajm#readme",
   "dependencies": {
-    "serve": "^2.1.2"
+    "serve": "^7.1.3"
   }
 }
