@@ -4,7 +4,6 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         '/index.html',
-        '/main.css',
         '/main.js',
         '/konami.js',
         '/og.png',
