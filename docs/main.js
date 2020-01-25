@@ -29,6 +29,8 @@ if ('serviceWorker' in navigator) {
 
   var overridden = false;
 
+  var heartClicks = 0;
+
   function isTimeForKroks() {
     var now = new Date();
     var hour = now.getHours();
@@ -56,13 +58,26 @@ if ('serviceWorker' in navigator) {
     }
   }
 
-  function override() {
-    overridden = true;
+  function override(force) {
+    overridden = typeof force !== 'undefined' ? force : true;
     doMagic();
+  }
+
+  function heartClick(){
+    heartClicks += 1;
+    if(heartClicks >= 10){
+      heartClicks = 0;
+      override(!overridden);
+    }
+  }
+
+  function setUpHeartClicker(){
+    document.querySelector('#heart').addEventListener('click', heartClick);
   }
 
   function init() {
     window.Konami(override)
+    setUpHeartClicker();
     doMagic();
     setInterval(function () {
       doMagic();
